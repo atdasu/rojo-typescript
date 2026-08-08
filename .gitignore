@@ -1,0 +1,13 @@
+node_modules/
+out/
+include/
+build/
+
+Packages/*
+!Packages/.gitkeep
+ServerPackages/*
+!ServerPackages/.gitkeep
+
+*.rbxlx
+*.rbxl
+*.rbxm

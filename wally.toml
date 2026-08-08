@@ -1,0 +1,11 @@
+[package]
+name = "starter/starter-game"
+description = "A private Roblox game built with roblox-ts and Rojo."
+version = "0.1.0"
+realm = "shared"
+private = true
+registry = "https://github.com/UpliftGames/wally-index"
+
+[dependencies]
+
+[server-dependencies]

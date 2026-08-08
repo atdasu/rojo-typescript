@@ -1,0 +1,32 @@
+{
+  "name": "starter-game",
+  "version": "0.1.0",
+  "private": true,
+  "description": "A Roblox game scaffold using roblox-ts, Rojo, Rokit, and Wally.",
+  "packageManager": "pnpm@11.9.0",
+  "scripts": {
+    "build": "rbxtsc",
+    "watch": "rbxtsc --watch",
+    "serve": "rojo serve default.project.json",
+    "dev": "pnpm run build && concurrently --kill-others-on-fail --names rbxtsc,rojo --prefix-colors blue,magenta \"pnpm run watch\" \"pnpm run serve\"",
+    "lint": "eslint src --max-warnings=0",
+    "format": "prettier --write .",
+    "format:check": "prettier --check .",
+    "check": "pnpm run format:check && pnpm run lint && pnpm run build",
+    "wally:install": "wally install && node tools/ensure-wally-directories.mjs",
+    "place:build": "pnpm run build && node tools/ensure-build-directory.mjs && rojo build default.project.json --output build/StarterGame.rbxl"
+  },
+  "devDependencies": {
+    "@eslint/js": "10.0.1",
+    "@rbxts/compiler-types": "3.0.0-types.0",
+    "@rbxts/types": "1.0.940",
+    "concurrently": "10.0.4",
+    "eslint": "10.8.1",
+    "eslint-config-prettier": "10.1.8",
+    "eslint-plugin-roblox-ts": "1.4.1",
+    "prettier": "3.9.6",
+    "roblox-ts": "3.0.0",
+    "typescript": "5.5.3",
+    "typescript-eslint": "8.63.0"
+  }
+}
