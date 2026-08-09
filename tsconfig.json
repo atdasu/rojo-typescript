@@ -17,6 +17,9 @@
     "strict": true,
     "target": "ESNext",
     "typeRoots": ["node_modules/@rbxts", "node_modules/@types"],
+    "paths": {
+      "@starter/*": ["shared/InternalLibraries/*/index.ts"]
+    },
     "rootDir": "src",
     "outDir": "out"
   },

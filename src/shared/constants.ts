@@ -1,1 +1,3 @@
-export const STARTER_MESSAGE = "StarterGame is running.";
+import { createGreeting } from "@starter/core";
+
+export const STARTER_MESSAGE = createGreeting("StarterGame");

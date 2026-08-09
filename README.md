@@ -2,6 +2,9 @@
 
 A private Roblox game starter built with pnpm, roblox-ts, Rojo, Rokit, and Wally.
 
+See [Dependency management](docs/dependency-management.md) for the supported Wally,
+npm, and internal-library workflows.
+
 ## Prerequisites
 
 - Node.js 18 or newer with Corepack enabled
@@ -45,6 +48,7 @@ connect to the running server, and changes will sync after rbxtsc recompiles the
 - `src/client` compiles into `StarterPlayerScripts`.
 - `src/server` compiles into `ServerScriptService`.
 - `src/shared` compiles into `ReplicatedStorage`.
+- `libraries/*` contains reusable internal roblox-ts workspace packages. They compile into `ReplicatedStorage.InternalLibraries`.
 - `rbxts_include` in `ReplicatedStorage` exposes the roblox-ts runtime to both client and server code.
 - `Packages` maps to `ReplicatedStorage.Packages` for shared Wally dependencies.
 - `ServerPackages` maps to `ServerStorage.ServerPackages` for server-only Wally dependencies.

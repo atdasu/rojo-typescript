@@ -1,7 +1,11 @@
 node_modules/
+.pnpm-store/
 out/
 include/
 build/
+libraries/*/out/
+libraries/*/*.tsbuildinfo
+src/shared/InternalLibraries/
 
 Packages/*
 !Packages/.gitkeep

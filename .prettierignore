@@ -2,6 +2,7 @@ node_modules/
 out/
 include/
 build/
+src/shared/InternalLibraries/
 Packages/
 ServerPackages/
 pnpm-lock.yaml

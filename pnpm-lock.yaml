@@ -7,6 +7,10 @@ settings:
 importers:
 
   .:
+    dependencies:
+      '@starter/core':
+        specifier: workspace:*
+        version: link:libraries/core
     devDependencies:
       '@eslint/js':
         specifier: 10.0.1
@@ -41,6 +45,8 @@ importers:
       typescript-eslint:
         specifier: 8.63.0
         version: 8.63.0(eslint@10.8.1)(typescript@5.5.3)
+
+  libraries/core: {}
 
 packages:
 

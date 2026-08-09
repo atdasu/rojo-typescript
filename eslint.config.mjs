@@ -9,7 +9,13 @@ const tsconfigRootDir = path.dirname(fileURLToPath(import.meta.url));
 
 export default [
   {
-    ignores: ["out/**", "Packages/**", "ServerPackages/**", "build/**"],
+    ignores: [
+      "out/**",
+      "Packages/**",
+      "ServerPackages/**",
+      "build/**",
+      "src/shared/InternalLibraries/**",
+    ],
   },
   js.configs.recommended,
   ...tseslint.configs.recommended,

@@ -4,17 +4,28 @@
   "private": true,
   "description": "A Roblox game scaffold using roblox-ts, Rojo, Rokit, and Wally.",
   "packageManager": "pnpm@11.9.0",
+  "roblox": {
+    "runtimeNpmScopes": [
+      "@rbxts",
+      "@starter"
+    ],
+    "internalLibraryScope": "@starter"
+  },
   "scripts": {
-    "build": "rbxtsc",
-    "watch": "rbxtsc --watch",
+    "build": "node tools/sync-internal-libraries.mjs && rbxtsc",
+    "watch": "concurrently --kill-others-on-fail --names internal,rbxtsc --prefix-colors cyan,blue \"node tools/watch-internal-libraries.mjs\" \"rbxtsc --watch\"",
     "serve": "rojo serve default.project.json",
     "dev": "pnpm run build && concurrently --kill-others-on-fail --names rbxtsc,rojo --prefix-colors blue,magenta \"pnpm run watch\" \"pnpm run serve\"",
-    "lint": "eslint src --max-warnings=0",
+    "lint": "eslint src libraries --max-warnings=0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
-    "check": "pnpm run format:check && pnpm run lint && pnpm run build",
+    "check": "pnpm run format:check && pnpm run lint && pnpm run deps:check && pnpm run build",
+    "deps:check": "node tools/check-runtime-dependencies.mjs",
     "wally:install": "wally install && node tools/ensure-wally-directories.mjs",
     "place:build": "pnpm run build && node tools/ensure-build-directory.mjs && rojo build default.project.json --output build/StarterGame.rbxl"
+  },
+  "dependencies": {
+    "@starter/core": "workspace:*"
   },
   "devDependencies": {
     "@eslint/js": "10.0.1",
