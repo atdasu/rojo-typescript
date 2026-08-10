@@ -13,9 +13,9 @@
   },
   "scripts": {
     "build": "node tools/sync-internal-libraries.mjs && rbxtsc",
-    "watch": "concurrently --kill-others-on-fail --names internal,rbxtsc --prefix-colors cyan,blue \"node tools/watch-internal-libraries.mjs\" \"rbxtsc --watch\"",
-    "serve": "rojo serve default.project.json",
-    "dev": "pnpm run build && concurrently --kill-others-on-fail --names rbxtsc,rojo --prefix-colors blue,magenta \"pnpm run watch\" \"pnpm run serve\"",
+    "watch": "concurrently --kill-others-on-fail --names rbxtsc,rojo --prefix-colors blue,green \"pnpm watch:rbxts\" \"pnpm watch:rojo\"",
+    "watch:rbxts": "rbxtsc --watch",
+    "watch:rojo": "rojo serve default.project.json",
     "lint": "eslint src libraries --max-warnings=0",
     "format": "prettier --write .",
     "format:check": "prettier --check .",
