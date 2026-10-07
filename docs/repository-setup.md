@@ -47,8 +47,9 @@ The ruleset in `.github/rulesets/main.json`:
 - requires linear history and resolved review threads,
 - blocks force pushes and deletion.
 
-Repository administrators may bypass it for emergencies. Remove `bypass_actors`
-from the file before applying it if nobody should.
+Nobody can bypass it, administrators included: every change to `main` goes
+through a pull request. To allow an emergency bypass, add an entry to
+`bypass_actors` in the file before applying it.
 
 ## Releases
 

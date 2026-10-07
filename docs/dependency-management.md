@@ -6,12 +6,12 @@ its installation, runtime location, and ownership are unambiguous.
 | Lane               | Use it for                                         | Source of truth                                        | Roblox runtime location                                                                                 |
 | ------------------ | -------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- |
 | Wally              | Luau/Roblox packages                               | `wally.toml` and `wally.lock`                          | `ReplicatedStorage.Packages` or `ServerStorage.ServerPackages`                                          |
-| npm                | Tooling and reviewed roblox-ts-compatible packages | `package.json` and `pnpm-lock.yaml`                    | `ReplicatedStorage.rbxts_include.node_modules` when the package provides Roblox-compatible runtime code |
+| pnpm               | Tooling and reviewed roblox-ts-compatible packages | `package.json` and `pnpm-lock.yaml`                    | `ReplicatedStorage.rbxts_include.node_modules` when the package provides Roblox-compatible runtime code |
 | Internal libraries | Reusable game TypeScript owned by this repository  | `libraries/*/package.json` and the root `package.json` | `ReplicatedStorage.Shared.InternalLibraries`                                                            |
 
 Do not use ordinary Node.js or browser packages at Roblox runtime. They often rely
 on Node, the DOM, or JavaScript features that do not exist in Luau. Tooling belongs
-in `devDependencies`; runtime npm code must be reviewed as roblox-ts-compatible.
+in `devDependencies`; runtime pnpm dependencies must be reviewed as roblox-ts-compatible.
 
 ## Initial setup
 
@@ -27,8 +27,10 @@ pnpm wally:install
 materializes Wally packages into the generated `Packages` and `ServerPackages`
 directories. Do not edit either generated directory by hand.
 
-Command-line tools (Rojo, Wally, Lune) are pinned in `rokit.toml`. Dependabot
-updates npm packages and GitHub Actions but cannot read `rokit.toml` or
+Command-line tools (Rojo, Wally, Lune) are pinned in `rokit.toml`. Node.js and
+pnpm are pinned in `mise.toml`; keep its pnpm version equal to `packageManager`
+in `package.json`. Dependabot
+updates pnpm dependencies and GitHub Actions but cannot read `rokit.toml` or
 `wally.toml`, so update those by hand. It also leaves `typescript` alone: roblox-ts
 requires one exact version, so change the two together.
 
@@ -59,7 +61,9 @@ packages also offer a typed `@rbxts/*` npm companion.
 
 Commit both `wally.toml` and `wally.lock`. Never commit generated package contents.
 
-## npm dependencies
+## pnpm dependencies
+
+Always use pnpm; `npm install` would ignore the workspace and the lockfile.
 
 Use `devDependencies` for tools, types, build helpers, and any package that does
 not execute in Roblox:

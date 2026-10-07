@@ -14,14 +14,15 @@ Before changing a subsystem, read its row. Do not bulk-read `.ai/` at startup.
 | UI components, stories, UI state            | `.ai/specs/ui.md`                                        |
 | Writing or running tests                    | `.ai/guides/testing.md`                                  |
 | Any Studio or MCP work, upload or import    | `.ai/guides/studio.md`, even if no local file is touched |
-| npm or Wally packages, internal libraries   | `docs/dependency-management.md`                          |
+| pnpm or Wally packages, internal libraries  | `docs/dependency-management.md`                          |
 | Why something is the way it is              | Search `.ai/decisions.md`                                |
 | Anything else, or where to record new facts | `.ai/README.md`                                          |
 
 ## Project rules
 
 - Game code is TypeScript compiled to Luau by roblox-ts. Tooling is pnpm, Rojo,
-  Wally and Rokit-pinned tools. Run commands from the repository root.
+  Wally and Rokit-pinned tools. Use pnpm, never npm or yarn. Run commands from
+  the repository root.
 - Edit `src/` and `libraries/*/src` only. `out/`, `include/`,
   `src/shared/InternalLibraries/`, `Packages/` and `ServerPackages/` are generated:
   never edit them, and never edit synced scripts in Studio.
@@ -31,7 +32,7 @@ Before changing a subsystem, read its row. Do not bulk-read `.ai/` at startup.
   else is a module. The compiler runs in strict mode.
 - Services take their dependencies as arguments and pure logic lives in
   `src/shared`, so both can be tested offline. See `.ai/specs/architecture.md`.
-- Runtime npm packages must be roblox-ts compatible (`@rbxts/*`); ordinary Node or
+- Runtime pnpm dependencies must be roblox-ts compatible (`@rbxts/*`); ordinary Node or
   browser packages do not run in Roblox. Tooling goes in `devDependencies`.
 - Do not update tools or dependencies incidentally, and never edit lockfiles by
   hand. `typescript` is pinned to the version roblox-ts requires.
