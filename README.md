@@ -11,7 +11,7 @@ UI kit, agent instructions and GitHub Actions. For the plain Luau version see
 ## Use this template
 
 1. Click **Use this template** on GitHub and create your repository.
-2. Rename `StarterGame` in `default.project.json`, `package.json` (`place:build`)
+2. Put your own name in `LICENSE` and replace `CONTRIBUTING.md`. Rename `StarterGame` in `default.project.json`, `package.json` (`place:build`)
    and `src/shared/constants.ts`, `starter-game` in `package.json`, and
    `starter/starter-game` in `wally.toml`. Update the title and badge above. To
    rename the `@starter` library scope, see
@@ -21,8 +21,9 @@ UI kit, agent instructions and GitHub Actions. For the plain Luau version see
 
 ## Prerequisites
 
-- Node.js 24 with Corepack enabled (`corepack enable` provides the pnpm version
-  recorded in `package.json`)
+- Node.js 24 and pnpm. With [mise](https://mise.jdx.dev), `mise install` provides
+  both from `mise.toml`. Without it, install Node.js 24 and run `corepack enable`
+  to get the pnpm version recorded in `package.json`. Use pnpm, not npm.
 - [Rokit](https://github.com/rojo-rbx/rokit)
 - Roblox Studio with the Rojo plugin installed
 
@@ -84,7 +85,7 @@ is not on disk, so keep Studio-authored work out of them.
 Because of that, a place built with `pnpm place:build` contains code only. Do not
 publish it over a place that holds Studio-authored content.
 
-See [Dependency management](docs/dependency-management.md) for the Wally, npm and
+See [Dependency management](docs/dependency-management.md) for the Wally, pnpm and
 internal-library workflows.
 
 ## Offline tests
@@ -138,10 +139,19 @@ point to. Fill them in as the game takes shape and keep `AGENTS.md` short.
 
 ## Continuous integration
 
-- **CI** (`.github/workflows/ci.yml`) runs `pnpm check` and `pnpm place:build` on
-  every push to `main` and every pull request, and uploads the built place.
+- **CI** (`.github/workflows/ci.yml`) runs on every push to `main` and every pull
+  request, as three parallel jobs: `lint` (formatting, lint and the dependency policy), `test` (the
+  offline tests) and `build` (the place file, uploaded as an artifact). A final
+  `check` job passes only when all three did; it is the one required status.
 - **Release** (`.github/workflows/release.yml`) runs when you push a tag such as
   `v1.0.0`. It checks, builds, and attaches the place file to a GitHub release.
-- **Dependabot** keeps npm packages and the GitHub Actions up to date. It leaves
+- Every action is pinned to a commit SHA and workflows run with a read-only token;
+  only the release job is granted `contents: write`.
+- **Dependabot** keeps pnpm dependencies and the GitHub Actions up to date. It leaves
   `typescript` alone, because roblox-ts requires one exact version, and it cannot
   read `rokit.toml` or `wally.toml`; update those by hand.
+
+## License
+
+[MIT](LICENSE). This template does not accept contributions; see
+[CONTRIBUTING.md](CONTRIBUTING.md). Fork it freely.
