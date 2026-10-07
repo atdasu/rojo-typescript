@@ -1,2 +1,7 @@
 packages:
   - "libraries/*"
+
+# concurrently pins a shell-quote release with a known vulnerability; remove this
+# once it depends on 1.11.0 or newer.
+overrides:
+  shell-quote: ^1.11.0
