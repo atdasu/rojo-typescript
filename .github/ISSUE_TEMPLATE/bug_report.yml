@@ -1,0 +1,44 @@
+name: Bug report
+description: Something in the template is broken or behaves unexpectedly.
+title: "bug: "
+labels: [bug]
+body:
+  - type: textarea
+    id: what-happened
+    attributes:
+      label: What happened?
+      description: What you did, what you expected and what happened instead.
+    validations:
+      required: true
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Steps to reproduce
+      description: Start from a fresh clone after `rokit install`, `pnpm install` and `pnpm wally:install`.
+      placeholder: |
+        1. Run ...
+        2. Open ...
+        3. See ...
+    validations:
+      required: true
+  - type: textarea
+    id: output
+    attributes:
+      label: Command output or logs
+      description: Paste the output of `pnpm check` or the Studio output. Remove any secrets first.
+      render: text
+  - type: input
+    id: environment
+    attributes:
+      label: Environment
+      description: Operating system, and the output of `rokit --version`.
+      placeholder: Windows 11, rokit 1.2.0
+  - type: checkboxes
+    id: checks
+    attributes:
+      label: Before submitting
+      options:
+        - label: I searched existing issues and this is not a duplicate.
+          required: true
+        - label: This is not a security vulnerability (those go through a private report).
+          required: true

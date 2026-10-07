@@ -1,0 +1,25 @@
+name: Suggestion
+description: Propose a change or addition to the template.
+title: "idea: "
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: |
+        Suggestions are read, but this template does not accept outside pull requests and may not adopt them. Forking is always welcome.
+  - type: textarea
+    id: problem
+    attributes:
+      label: What problem would this solve?
+    validations:
+      required: true
+  - type: textarea
+    id: proposal
+    attributes:
+      label: What do you propose?
+    validations:
+      required: true
+  - type: textarea
+    id: alternatives
+    attributes:
+      label: Alternatives you considered

@@ -138,10 +138,14 @@ point to. Fill them in as the game takes shape and keep `AGENTS.md` short.
 
 ## Continuous integration
 
-- **CI** (`.github/workflows/ci.yml`) runs `pnpm check` and `pnpm place:build` on
-  every push to `main` and every pull request, and uploads the built place.
+- **CI** (`.github/workflows/ci.yml`) runs on every push to `main` and every pull
+  request, as three parallel jobs: `lint` (formatting, lint and the dependency policy), `test` (the
+  offline tests) and `build` (the place file, uploaded as an artifact). A final
+  `check` job passes only when all three did; it is the one required status.
 - **Release** (`.github/workflows/release.yml`) runs when you push a tag such as
   `v1.0.0`. It checks, builds, and attaches the place file to a GitHub release.
+- Every action is pinned to a commit SHA and workflows run with a read-only token;
+  only the release job is granted `contents: write`.
 - **Dependabot** keeps npm packages and the GitHub Actions up to date. It leaves
   `typescript` alone, because roblox-ts requires one exact version, and it cannot
   read `rokit.toml` or `wally.toml`; update those by hand.
