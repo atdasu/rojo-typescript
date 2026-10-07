@@ -1,17 +1,25 @@
+# npm and roblox-ts output.
 node_modules/
 .pnpm-store/
 out/
 include/
-build/
 libraries/*/out/
 libraries/*/*.tsbuildinfo
 src/shared/InternalLibraries/
 
-Packages/*
-!Packages/.gitkeep
-ServerPackages/*
-!ServerPackages/.gitkeep
+# Wally output.
+/Packages/
+/ServerPackages/
+
+# Generated output and local secrets.
+/build/
+/sourcemap.json
+.env
+.env.*
+!.env.example
 
 *.rbxlx
 *.rbxl
 *.rbxm
+*.rbxl.lock
+*.rbxlx.lock

@@ -7,7 +7,7 @@ its installation, runtime location, and ownership are unambiguous.
 | ------------------ | -------------------------------------------------- | ------------------------------------------------------ | ------------------------------------------------------------------------------------------------------- |
 | Wally              | Luau/Roblox packages                               | `wally.toml` and `wally.lock`                          | `ReplicatedStorage.Packages` or `ServerStorage.ServerPackages`                                          |
 | npm                | Tooling and reviewed roblox-ts-compatible packages | `package.json` and `pnpm-lock.yaml`                    | `ReplicatedStorage.rbxts_include.node_modules` when the package provides Roblox-compatible runtime code |
-| Internal libraries | Reusable game TypeScript owned by this repository  | `libraries/*/package.json` and the root `package.json` | `ReplicatedStorage.InternalLibraries`                                                                   |
+| Internal libraries | Reusable game TypeScript owned by this repository  | `libraries/*/package.json` and the root `package.json` | `ReplicatedStorage.Shared.InternalLibraries`                                                            |
 
 Do not use ordinary Node.js or browser packages at Roblox runtime. They often rely
 on Node, the DOM, or JavaScript features that do not exist in Luau. Tooling belongs
@@ -26,6 +26,11 @@ pnpm wally:install
 `pnpm install` links every internal workspace library. `pnpm wally:install`
 materializes Wally packages into the generated `Packages` and `ServerPackages`
 directories. Do not edit either generated directory by hand.
+
+Command-line tools (Rojo, Wally, Lune) are pinned in `rokit.toml`. Dependabot
+updates npm packages and GitHub Actions but cannot read `rokit.toml` or
+`wally.toml`, so update those by hand. It also leaves `typescript` alone: roblox-ts
+requires one exact version, so change the two together.
 
 ## Wally dependencies
 
@@ -87,7 +92,7 @@ files available. Commit `package.json` and `pnpm-lock.yaml` together.
 
 Internal libraries are pnpm workspace packages in `libraries/*`. They use the
 `@starter` scope and are compiled with the game, so their TypeScript becomes Luau
-under `ReplicatedStorage.InternalLibraries`. The build synchronizes their public
+under `ReplicatedStorage.Shared.InternalLibraries`. The build synchronizes their public
 source into the ignored `src/shared/InternalLibraries` build input; never edit that
 generated directory. Import only a library's public root entry point.
 
@@ -155,7 +160,8 @@ Then run `pnpm install` and `pnpm run check`.
 | ---------------------- | -------------------------------------------------------------- |
 | `pnpm run deps:check`  | Runtime npm scopes and internal library package names          |
 | `pnpm run build`       | Compiles game and internal-library TypeScript to Luau          |
-| `pnpm run check`       | Formatting, linting, dependency policy, and compilation        |
+| `pnpm run check`       | Formatting, linting, dependency policy, compilation, and tests |
+| `pnpm test`            | Compiles, then runs the offline Lune tests in `tests/`         |
 | `pnpm wally:install`   | Installs Wally dependencies into generated package directories |
 | `pnpm run place:build` | Builds `build/StarterGame.rbxl` through Rojo                   |
 

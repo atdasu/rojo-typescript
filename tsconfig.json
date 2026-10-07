@@ -5,6 +5,8 @@
     "baseUrl": "src",
     "downlevelIteration": true,
     "jsx": "react",
+    "jsxFactory": "Vide.jsx",
+    "jsxFragmentFactory": "Vide.Fragment",
     "module": "commonjs",
     "moduleDetection": "force",
     "moduleResolution": "Node",

@@ -1,12 +1,18 @@
 {
   "name": "StarterGame",
-  "globIgnorePaths": ["**/*.spec.lua"],
   "tree": {
     "$className": "DataModel",
+    "$ignoreUnknownInstances": true,
     "ReplicatedStorage": {
       "$className": "ReplicatedStorage",
+      "$ignoreUnknownInstances": true,
+      "Shared": {
+        "$path": "out/shared"
+      },
       "Packages": {
-        "$path": "Packages"
+        "$className": "Folder",
+        "$ignoreUnknownInstances": false,
+        "$path": { "optional": "Packages" }
       },
       "rbxts_include": {
         "$path": "include",
@@ -16,24 +22,33 @@
             "$path": "node_modules/@rbxts"
           }
         }
-      },
-      "$path": "out/shared"
+      }
     },
     "ServerScriptService": {
       "$className": "ServerScriptService",
-      "$path": "out/server"
+      "$ignoreUnknownInstances": true,
+      "Server": {
+        "$path": "out/server"
+      }
     },
     "ServerStorage": {
       "$className": "ServerStorage",
+      "$ignoreUnknownInstances": true,
       "ServerPackages": {
-        "$path": "ServerPackages"
+        "$className": "Folder",
+        "$ignoreUnknownInstances": false,
+        "$path": { "optional": "ServerPackages" }
       }
     },
     "StarterPlayer": {
       "$className": "StarterPlayer",
+      "$ignoreUnknownInstances": true,
       "StarterPlayerScripts": {
         "$className": "StarterPlayerScripts",
-        "$path": "out/client"
+        "$ignoreUnknownInstances": true,
+        "Client": {
+          "$path": "out/client"
+        }
       }
     }
   }

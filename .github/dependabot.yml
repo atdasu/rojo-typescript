@@ -1,0 +1,32 @@
+version: 2
+
+# Dependabot has no Rokit or Wally support: update rokit.toml and wally.toml by
+# hand (see docs/dependency-management.md).
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    groups:
+      actions:
+        patterns: ["*"]
+    commit-message:
+      prefix: ci
+
+  - package-ecosystem: npm
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+    groups:
+      roblox-ts:
+        patterns: ["roblox-ts", "@rbxts/*"]
+      tooling:
+        dependency-type: development
+        exclude-patterns: ["roblox-ts", "@rbxts/*"]
+    ignore:
+      # roblox-ts requires one exact TypeScript version; change it only together
+      # with roblox-ts.
+      - dependency-name: typescript
+    commit-message:
+      prefix: deps

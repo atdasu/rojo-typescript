@@ -8,6 +8,12 @@ importers:
 
   .:
     dependencies:
+      '@rbxts/ui-labs':
+        specifier: 2.4.2
+        version: 2.4.2
+      '@rbxts/vide':
+        specifier: 0.6.1
+        version: 0.6.1
       '@starter/core':
         specifier: workspace:*
         version: link:libraries/core
@@ -114,6 +120,12 @@ packages:
 
   '@rbxts/types@1.0.940':
     resolution: {integrity: sha512-F5kSGN/V005xtTSI7+JYJB4NAGU7GJnYEm3I8XquB42ldIrphiFhQypuWOPU5ke0xqNKVK8y1EI9gAxylzbuew==}
+
+  '@rbxts/ui-labs@2.4.2':
+    resolution: {integrity: sha512-9cyzDYN4mM7KSupZpbHRCUWCfSHzy8LCqa9Czys2jaKYUCn8oV4j5AE+5jTrHD/8RcltP5EvCSFIFwB0N/NfxA==}
+
+  '@rbxts/vide@0.6.1':
+    resolution: {integrity: sha512-syFqx+HYXy0TauDCGLhc68K2cAlfgYookIJSRtJZ01W7mUI+EKyj80x2L91dQxos3BwAAGJqBD/ovWU4M//+Lg==}
 
   '@roblox-ts/luau-ast@2.0.0':
     resolution: {integrity: sha512-cmMi093IdwBOLVxwuordhM8AmtbyTIyRpsTbB0D/JauidW4SXsQRQowSwWjHo4QP0DRJBXvOIlxtqEQi50uNzQ==}
@@ -826,6 +838,10 @@ snapshots:
   '@rbxts/compiler-types@3.0.0-types.0': {}
 
   '@rbxts/types@1.0.940': {}
+
+  '@rbxts/ui-labs@2.4.2': {}
+
+  '@rbxts/vide@0.6.1': {}
 
   '@roblox-ts/luau-ast@2.0.0': {}
 
