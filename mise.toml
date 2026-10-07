@@ -1,0 +1,6 @@
+# Runtime versions for mise (https://mise.jdx.dev): run `mise install`.
+# CI installs both from this file. Keep pnpm in step with
+# `packageManager` in package.json. Roblox tools are pinned in rokit.toml.
+[tools]
+node = "24"
+pnpm = "11.9.0"

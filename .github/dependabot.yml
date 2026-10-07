@@ -13,6 +13,7 @@ updates:
     commit-message:
       prefix: ci
 
+  # Dependabot calls this ecosystem "npm"; it reads and updates pnpm-lock.yaml.
   - package-ecosystem: npm
     directory: /
     schedule:

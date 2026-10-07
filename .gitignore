@@ -1,4 +1,4 @@
-# npm and roblox-ts output.
+# pnpm and roblox-ts output.
 node_modules/
 .pnpm-store/
 out/

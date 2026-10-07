@@ -21,8 +21,9 @@ UI kit, agent instructions and GitHub Actions. For the plain Luau version see
 
 ## Prerequisites
 
-- Node.js 24 with Corepack enabled (`corepack enable` provides the pnpm version
-  recorded in `package.json`)
+- Node.js 24 and pnpm. With [mise](https://mise.jdx.dev), `mise install` provides
+  both from `mise.toml`. Without it, install Node.js 24 and run `corepack enable`
+  to get the pnpm version recorded in `package.json`. Use pnpm, not npm.
 - [Rokit](https://github.com/rojo-rbx/rokit)
 - Roblox Studio with the Rojo plugin installed
 
@@ -84,7 +85,7 @@ is not on disk, so keep Studio-authored work out of them.
 Because of that, a place built with `pnpm place:build` contains code only. Do not
 publish it over a place that holds Studio-authored content.
 
-See [Dependency management](docs/dependency-management.md) for the Wally, npm and
+See [Dependency management](docs/dependency-management.md) for the Wally, pnpm and
 internal-library workflows.
 
 ## Offline tests
@@ -146,7 +147,7 @@ point to. Fill them in as the game takes shape and keep `AGENTS.md` short.
   `v1.0.0`. It checks, builds, and attaches the place file to a GitHub release.
 - Every action is pinned to a commit SHA and workflows run with a read-only token;
   only the release job is granted `contents: write`.
-- **Dependabot** keeps npm packages and the GitHub Actions up to date. It leaves
+- **Dependabot** keeps pnpm dependencies and the GitHub Actions up to date. It leaves
   `typescript` alone, because roblox-ts requires one exact version, and it cannot
   read `rokit.toml` or `wally.toml`; update those by hand.
 

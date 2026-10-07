@@ -2,7 +2,7 @@
 
 All game UI is built with [Vide](https://centau.github.io/vide/) and previewed in
 [UI Labs](https://ui-labs.luau.page/), through the `@rbxts/vide` and
-`@rbxts/ui-labs` npm packages. `tsconfig.json` points JSX at `Vide.jsx`, so every
+`@rbxts/ui-labs` packages installed with pnpm. `tsconfig.json` points JSX at `Vide.jsx`, so every
 `.tsx` file imports `Vide`.
 
 ## Components
