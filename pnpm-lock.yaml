@@ -25,8 +25,8 @@ importers:
         specifier: 3.0.0-types.0
         version: 3.0.0-types.0
       '@rbxts/types':
-        specifier: 1.0.940
-        version: 1.0.940
+        specifier: 1.0.956
+        version: 1.0.956
       concurrently:
         specifier: 10.0.4
         version: 10.0.4
@@ -118,8 +118,8 @@ packages:
   '@rbxts/compiler-types@3.0.0-types.0':
     resolution: {integrity: sha512-VGOHJPoL7+56NTatMGqQj3K7xWuzEV+aP4QD5vZiHu+bcff3kiTmtoadaF6NkJrmwfFAvbsd4Dg764ZjWNceag==}
 
-  '@rbxts/types@1.0.940':
-    resolution: {integrity: sha512-F5kSGN/V005xtTSI7+JYJB4NAGU7GJnYEm3I8XquB42ldIrphiFhQypuWOPU5ke0xqNKVK8y1EI9gAxylzbuew==}
+  '@rbxts/types@1.0.956':
+    resolution: {integrity: sha512-knhWKDjIqbRn110cDbJkL5/oh2qRtPsDV+szfvGPnMfkxTDQtrTQ7jtgyamJbkKT97N5Ib3Z55AyBlSmt7q81Q==}
 
   '@rbxts/ui-labs@2.4.2':
     resolution: {integrity: sha512-9cyzDYN4mM7KSupZpbHRCUWCfSHzy8LCqa9Czys2jaKYUCn8oV4j5AE+5jTrHD/8RcltP5EvCSFIFwB0N/NfxA==}
@@ -616,8 +616,8 @@ packages:
     resolution: {integrity: sha512-V7+vQEJ06Z+c5tSye8S+nHUfI51xoXIXjHQ99cQtKUkQqqO1kO/KCJUfZXuB47h/YBlDhah2H3hdUGXn8ie0oA==}
     engines: {node: '>=8.6'}
 
-  picomatch@4.0.5:
-    resolution: {integrity: sha512-RvwwcruNjI1ncT5xRakeyS9Lf8lcItv34KD+aif+VH9kduAyfYBipGh12274xtenIPZ119/R9BdTBa8gAwSh0A==}
+  picomatch@4.0.7:
+    resolution: {integrity: sha512-qcJu88Q2IWqJsDD529JKMdwGm/dvInW4HvQnRwiH9JtihJvzGOscDtHE3x1pBKeUOTysQ8kVmLnJ2kJu7yhcGA==}
     engines: {node: '>=12'}
 
   prelude-ls@1.2.1:
@@ -837,7 +837,7 @@ snapshots:
 
   '@rbxts/compiler-types@3.0.0-types.0': {}
 
-  '@rbxts/types@1.0.940': {}
+  '@rbxts/types@1.0.956': {}
 
   '@rbxts/ui-labs@2.4.2': {}
 
@@ -1220,9 +1220,9 @@ snapshots:
 
   fast-uri@3.1.5: {}
 
-  fdir@6.5.0(picomatch@4.0.5):
+  fdir@6.5.0(picomatch@4.0.7):
     optionalDependencies:
-      picomatch: 4.0.5
+      picomatch: 4.0.7
 
   file-entry-cache@8.0.0:
     dependencies:
@@ -1367,7 +1367,7 @@ snapshots:
 
   picomatch@2.3.2: {}
 
-  picomatch@4.0.5: {}
+  picomatch@4.0.7: {}
 
   prelude-ls@1.2.1: {}
 
@@ -1442,8 +1442,8 @@ snapshots:
 
   tinyglobby@0.2.17:
     dependencies:
-      fdir: 6.5.0(picomatch@4.0.5)
-      picomatch: 4.0.5
+      fdir: 6.5.0(picomatch@4.0.7)
+      picomatch: 4.0.7
 
   to-regex-range@5.0.1:
     dependencies:
