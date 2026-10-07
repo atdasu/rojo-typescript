@@ -11,7 +11,7 @@ UI kit, agent instructions and GitHub Actions. For the plain Luau version see
 ## Use this template
 
 1. Click **Use this template** on GitHub and create your repository.
-2. Rename `StarterGame` in `default.project.json`, `package.json` (`place:build`)
+2. Put your own name in `LICENSE` and replace `CONTRIBUTING.md`. Rename `StarterGame` in `default.project.json`, `package.json` (`place:build`)
    and `src/shared/constants.ts`, `starter-game` in `package.json`, and
    `starter/starter-game` in `wally.toml`. Update the title and badge above. To
    rename the `@starter` library scope, see
@@ -145,3 +145,8 @@ point to. Fill them in as the game takes shape and keep `AGENTS.md` short.
 - **Dependabot** keeps npm packages and the GitHub Actions up to date. It leaves
   `typescript` alone, because roblox-ts requires one exact version, and it cannot
   read `rokit.toml` or `wally.toml`; update those by hand.
+
+## License
+
+[MIT](LICENSE). This template does not accept contributions; see
+[CONTRIBUTING.md](CONTRIBUTING.md). Fork it freely.
