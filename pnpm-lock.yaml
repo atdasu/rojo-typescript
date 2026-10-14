@@ -28,8 +28,8 @@ importers:
         specifier: 3.0.0-types.0
         version: 3.0.0-types.0
       '@rbxts/types':
-        specifier: 1.0.956
-        version: 1.0.956
+        specifier: 1.0.957
+        version: 1.0.957
       concurrently:
         specifier: 10.0.5
         version: 10.0.5
@@ -136,8 +136,8 @@ packages:
   '@rbxts/compiler-types@3.0.0-types.0':
     resolution: {integrity: sha512-VGOHJPoL7+56NTatMGqQj3K7xWuzEV+aP4QD5vZiHu+bcff3kiTmtoadaF6NkJrmwfFAvbsd4Dg764ZjWNceag==}
 
-  '@rbxts/types@1.0.956':
-    resolution: {integrity: sha512-knhWKDjIqbRn110cDbJkL5/oh2qRtPsDV+szfvGPnMfkxTDQtrTQ7jtgyamJbkKT97N5Ib3Z55AyBlSmt7q81Q==}
+  '@rbxts/types@1.0.957':
+    resolution: {integrity: sha512-nqJMT4blRms/Bi1gC/T4x0SVOgr9nZWWz0f7f+Zx1d4ez4QwOWFG3FfKkz1HQCC0SmhKhXJSoZaPpTsweuikaQ==}
 
   '@rbxts/ui-labs@2.4.2':
     resolution: {integrity: sha512-9cyzDYN4mM7KSupZpbHRCUWCfSHzy8LCqa9Czys2jaKYUCn8oV4j5AE+5jTrHD/8RcltP5EvCSFIFwB0N/NfxA==}
@@ -887,7 +887,7 @@ snapshots:
 
   '@rbxts/compiler-types@3.0.0-types.0': {}
 
-  '@rbxts/types@1.0.956': {}
+  '@rbxts/types@1.0.957': {}
 
   '@rbxts/ui-labs@2.4.2': {}
 

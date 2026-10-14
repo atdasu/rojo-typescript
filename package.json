@@ -35,7 +35,7 @@
   "devDependencies": {
     "@eslint/js": "10.0.1",
     "@rbxts/compiler-types": "3.0.0-types.0",
-    "@rbxts/types": "1.0.956",
+    "@rbxts/types": "1.0.957",
     "concurrently": "10.0.5",
     "eslint": "10.12.0",
     "eslint-config-prettier": "10.1.8",
